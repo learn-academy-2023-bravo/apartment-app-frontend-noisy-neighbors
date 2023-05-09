@@ -3,8 +3,8 @@
 
 const Header = () => {
     return (
-      <header>
-        <h3>Welcome</h3>
+      <header className="header">
+        <h3>Apartments 'R Us</h3>
       </header>
     )
   }

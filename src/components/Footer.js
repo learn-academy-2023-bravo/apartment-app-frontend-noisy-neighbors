@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
       
-        <h3>Created by Jake, Nikki, Sam, & Evelyn</h3>
+        <footer className="footer">Created by Jake, Nikki, Sam, & Evelyn</footer>
       
     )
   }
