@@ -86,7 +86,7 @@ const ApartmentNew = ({createApartment}) => {
           <Label for="apartment-square-footage">Sq Ft.</Label>
           <Input
           id="apartment-square-footage"
-          name="square-footage"
+          name="square_footage"
           placeholder="Enter square-footage"
           type="text"
           onChange={handleChange}
@@ -152,7 +152,7 @@ const ApartmentNew = ({createApartment}) => {
           <Label for="apartment-major-appliances">Major Appliances</Label>
           <Input
           id="apartment-major-appliances"
-          name="major-appliances"
+          name="major_appliances"
           placeholder="Major appliances?"
           type="text"
           onChange={handleChange}

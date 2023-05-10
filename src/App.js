@@ -20,6 +20,10 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(mockUsers[0]) //Simulated Login
   const [apartments, setApartments] = useState(mockApartments)
 
+  const createApartment = (createApartment) => {
+
+  }
+
 
   return (
 
@@ -28,13 +32,13 @@ const App = () => {
     <Header current_user={currentUser}/>
     <Routes>
     <Route path='/' element={<Homepage />} />
-    <Route path='/apartmentedit/:id' element={<ApartmentEdit />} />
+    <Route path='/apartmentedit/:id' element={<ApartmentEdit apartments={apartments} updateApartment={updateApartment} />} />
     <Route path='/signin' element={<SignIn />} />
     <Route path='/signup' element={<SignUp />} />
     <Route path='/apartmentindex' element={<ApartmentIndex apartments={apartments}/>} />
     <Route path='/apartmentshow/:id' element={<ApartmentShow apartments={apartments}/>} />
     <Route path='/myapartments' element={<MyApartments apartments={apartments} current_user={currentUser}/>} />
-    <Route path='/apartmentnew' element={<ApartmentNew />} />
+    <Route path='/apartmentnew' element={<ApartmentNew createApartment={createApartment}/>} />
     <Route path='*' element={<NotFound />} />
     </Routes>
     <Footer />

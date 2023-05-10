@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react"
-import ApartmentShow from "./pages/ApartmentShow"
+import ApartmentShow from "../pages/ApartmentShow"
 import mockApartments from "../mockApartments"
 import { MemoryRouter } from "react-router-dom"
 
