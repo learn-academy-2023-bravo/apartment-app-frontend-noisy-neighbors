@@ -7,37 +7,38 @@ import ApartmentEdit from "./pages/ApartmentEdit";
 import ApartmentIndex from "./pages/ApartmentIndex";
 import ApartmentNew from "./pages/ApartmentNew";
 import ApartmentShow from "./pages/ApartmentShow";
-import ApartmentProtectedIndex from "./pages/ApartmentProtectedIndex"
 import Footer from "./components/Footer";
-import SignIn from "./pages/SignIn"
-import SignUp from "./pages/SignUp"
+import SignIn from "./components/SignIn"
+import SignUp from "./components/SignUp"
 import './App.css'
 import mockApartments from "./mockApartments"
 import mockUsers from "./mockUsers"
+import MyApartments from './pages/MyApartments';
 
 
 const App = () => {
-
-
-
-
-
+  const [currentUser, setCurrentUser] = useState(mockUsers[0]) //Simulated Login
+  const [apartments, setApartments] = useState(mockApartments)
 
 
   return (
 
     <>
     
-    <Header />
-    <Homepage />
-    <ApartmentEdit />
-    <ApartmentIndex />
-    <ApartmentShow />
-    <ApartmentProtectedIndex />
-    <ApartmentNew />
-    <SignIn />
-    <SignUp />
-    <NotFound />
+    <Header current_user={currentUser}/>
+    <Routes>
+    <Route path='/' element={<Homepage />} />
+    <Route path='/apartmentedit/:id' element={<ApartmentEdit />} />
+    <Route path='/signin' element={<SignIn />} />
+    <Route path='/signup' element={<SignUp />} />
+    <Route path='/apartmentindex' element={<ApartmentIndex apartments={apartments}/>} />
+    <Route path='/apartmentshow/:id' element={<ApartmentShow apartments={apartments}/>} />
+    <Route path='/myapartments' element={<MyApartments apartments={apartments} current_user={currentUser}/>} />
+    <Route path='/apartmentnew' element={<ApartmentNew />} />
+    <Route path='/apartmentnew' element={<SignIn />} />
+    <Route path='/apartmentnew' element={<SignUp />} />
+    <Route path='*' element={<NotFound />} />
+    </Routes>
     <Footer />
     
     </>
