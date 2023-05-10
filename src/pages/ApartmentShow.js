@@ -3,7 +3,7 @@
 const ApartmentShow = () => {
     return (
       
-        <h3>Show Apartment</h3>
+        <h3 className="page_heading">Show Apartment</h3>
       
     )
   }

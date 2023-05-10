@@ -7,7 +7,7 @@
 const ApartmentEdit = () => {
     return (
       
-        <h3>Edit Apartment</h3>
+        <h3 className="page_heading">Edit Apartment</h3>
       
     )
   }

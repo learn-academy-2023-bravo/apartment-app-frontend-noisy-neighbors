@@ -1,7 +1,7 @@
 const ApartmentNew = () => {
     return (
       
-        <h3>Add A Listing</h3>
+        <h3 className="page_heading">Add A Listing</h3>
       
     )
   }
