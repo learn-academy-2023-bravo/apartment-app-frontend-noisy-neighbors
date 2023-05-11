@@ -9,8 +9,8 @@ const SignUp = () => {
   }
   return (
     <>
-      <h3 className="page_heading">Sign Up!</h3>
-      <div>
+      <h3 className="page_heading"></h3>
+      <div className="sign-up">
         <form onSubmit={handleSubmit}>
           Email: <input type="email" name='email' placeholder="email" />
           <br />

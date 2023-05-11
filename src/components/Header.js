@@ -9,7 +9,7 @@ const Header = ({ current_user }) => {
       <>
       <header className="header">
       <img src={logoImage} alt="Logo" className="logo-image" />
-        <h3>Renter's Delight</h3>
+        <h3 className="app-name">Renter's Delight</h3>
         <Navigation current_user={current_user}/>
       </header>
       </>

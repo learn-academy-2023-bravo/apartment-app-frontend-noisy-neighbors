@@ -9,8 +9,8 @@ const SignIn = () => {
 
   return (
     <>
-      <h3 className="page_heading">Log In</h3>
-      <div>
+      <h3 className="page_heading"></h3>
+      <div className="sign-in">
         <form onSubmit={handleSubmit} className="form">
           Email: <input type="email" name='email' placeholder="email" />
           <br />

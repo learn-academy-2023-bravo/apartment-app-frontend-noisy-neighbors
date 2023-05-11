@@ -76,7 +76,8 @@ const Homepage = (args) => {
     <>
 
         
-      <h3 className="page_heading">Home</h3>
+      <h3 className="page_heading"></h3>
+    
 
 
     <Carousel

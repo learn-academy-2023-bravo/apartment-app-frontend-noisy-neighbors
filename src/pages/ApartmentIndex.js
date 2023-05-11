@@ -12,7 +12,7 @@ const ApartmentIndex = ({ apartments }) => {
     <>
     <main>
       <div className="apartments-body">
-        <h1 className="index-title">Recent Listings</h1>
+        <h1 className="index-title"></h1>
         <div className="flex-apartments">
           {apartments.map((apartment, index) => {
             return (
