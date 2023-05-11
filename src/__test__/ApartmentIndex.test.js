@@ -13,6 +13,5 @@ describe("<ApartmentIndex />", () => {
         
         const element = screen.getByText("Recent Listings")
         expect(element).toBeInTheDocument()
-        screen.logTestingPlaygroundURL()
     })
 })

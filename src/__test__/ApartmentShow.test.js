@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react"
-import ApartmentShow from "./pages/ApartmentShow"
+import ApartmentShow from "../pages/ApartmentShow"
 import mockApartments from "../mockApartments"
 import { MemoryRouter } from "react-router-dom"
 
@@ -15,6 +15,5 @@ describe("<ApartmentShow />", () => {
         
         const element = screen.getByText("Show Apartment")
         expect(element).toBeInTheDocument()
-        screen.logTestingPlaygroundURL()
     })
 })
