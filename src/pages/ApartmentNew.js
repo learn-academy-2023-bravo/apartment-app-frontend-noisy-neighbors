@@ -36,8 +36,20 @@ const ApartmentNew = ({createApartment}) => {
     
   return(
     <><h3 className="page_heading">Add A Listing</h3>
+        
       <Form 
       className="new-apartment-form">
+        <FormGroup>
+          <Label for="apartment-street">Street</Label>
+          <Input
+          id="apartment-street"
+          name="street"
+          placeholder="Enter Street"
+          type="text"
+          onChange={handleChange}
+          value={newApartment.street}
+          />
+        </FormGroup>
         <FormGroup>
           <Label for="apartment-price">Price</Label>
           <Input
@@ -83,7 +95,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-square-footage">Sq Ft.</Label>
+          <Label for="apartment-square-footage">Square Footage</Label>
           <Input
           id="apartment-square-footage"
           name="square_footage"
@@ -116,7 +128,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-pet">Pets</Label>
+          <Label for="apartment-pet">Pet</Label>
           <Input
           id="apartment-pet"
           name="pet"

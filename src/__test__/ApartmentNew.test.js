@@ -12,8 +12,10 @@ describe("<ApartmentNew />", () => {
     
     const streetInput=screen.getByRole('textbox', {name: /street/i})
     expect(streetInput).toBeInTheDocument()
+    screen.logTestingPlaygroundURL()
+
     
-    const unitInput=screen.getByRole('textbox', {name: /unit/i})
+    const unitInput=screen.getByRole('textbox', {name: "Unit"})
     expect(unitInput).toBeInTheDocument()
     
     const cityInput=screen.getByRole('textbox', {name: /city/i})
@@ -22,7 +24,7 @@ describe("<ApartmentNew />", () => {
     const stateInput=screen.getByRole('textbox', {name: /state/i})
     expect(stateInput).toBeInTheDocument()
     
-    const square_footageInput=screen.getByRole('textbox', {name: /square_footage/i})
+    const square_footageInput=screen.getByRole('textbox', {name: /square footage/i})
     expect(square_footageInput).toBeInTheDocument()
     
     const priceInput=screen.getByRole('textbox', {name: /price/i})
@@ -40,10 +42,10 @@ describe("<ApartmentNew />", () => {
     const imageInput=screen.getByRole('textbox', {name: /image/i})
     expect(imageInput).toBeInTheDocument()
     
-    const ac_unitInput=screen.getByRole('textbox', {name: /ac_unit/i})
+    const ac_unitInput=screen.getByRole('textbox', {name: "A/C Unit"})
     expect(ac_unitInput).toBeInTheDocument()
     
-    const major_appliancesInput=screen.getByRole('textbox', {name: /major_appliances/i})
+    const major_appliancesInput=screen.getByRole('textbox', {name: /major appliances/i})
     expect(major_appliancesInput).toBeInTheDocument()
     
     const parkingInput=screen.getByRole('textbox', {name: /parking/i})
@@ -51,6 +53,5 @@ describe("<ApartmentNew />", () => {
     
     const hoaInput=screen.getByRole('textbox', {name: /hoa/i})
     expect(hoaInput).toBeInTheDocument()
-    screen.logTestingPlaygroundURL()
   })  
 })

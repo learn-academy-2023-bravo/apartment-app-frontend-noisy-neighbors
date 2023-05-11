@@ -20,7 +20,7 @@ describe("<Header/>", () => {
             (<Header/>)
             </BrowserRouter>
         )
-            screen.logTestingPlaygroundURL()
+
         userEvent.click(screen.getByRole('heading', {
             name: /Apartments 'R Us/i
           }))

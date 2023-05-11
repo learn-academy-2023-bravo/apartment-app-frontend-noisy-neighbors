@@ -15,6 +15,5 @@ describe("<ApartmentShow />", () => {
         
         const element = screen.getByText("Show Apartment")
         expect(element).toBeInTheDocument()
-        screen.logTestingPlaygroundURL()
     })
 })

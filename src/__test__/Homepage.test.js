@@ -6,6 +6,5 @@ describe("<Homepage />", () => {
         render(<Homepage />)
         const element = screen.getByText("Home")
         expect(element).toBeInTheDocument()
-        screen.logTestingPlaygroundURL()
     })
 })

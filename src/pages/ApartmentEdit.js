@@ -35,6 +35,18 @@ const ApartmentEdit = ({ apartments, updateApartment }) => {
       <Form 
       className="edit-apartment-form">
         <FormGroup>
+          <Label for="apartment-street">Street</Label>
+          <Input
+          id="apartment-street"
+          name="street"
+          placeholder="Enter Street"
+          type="text"
+          onChange={handleChange}
+          value={editApartment.street}
+          />
+        </FormGroup>
+
+        <FormGroup>
           <Label for="apartment-price">Price</Label>
           <Input
           id="apartment-price"
@@ -79,7 +91,7 @@ const ApartmentEdit = ({ apartments, updateApartment }) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-square-footage">Sq Ft.</Label>
+          <Label for="apartment-square-footage">Square Footage</Label>
           <Input
           id="apartment-square-footage"
           name="square_footage"
@@ -112,7 +124,7 @@ const ApartmentEdit = ({ apartments, updateApartment }) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-pet">Pets</Label>
+          <Label for="apartment-pet">Pet</Label>
           <Input
           id="apartment-pet"
           name="pet"
