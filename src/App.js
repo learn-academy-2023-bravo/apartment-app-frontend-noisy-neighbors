@@ -23,9 +23,6 @@ const App = () => {
       readApartment()
     }, [])
 
-  const createApartment = (createApartment) => {
-  }
-
   const readApartment = () => {
     fetch('http://localhost:3000/apartments')
     .then(response => response.json())
@@ -33,6 +30,19 @@ const App = () => {
       setApartments(payload)
     })
     .catch(error => console.log("Apartment read errors ", error))
+  }
+
+  const createApartment = (createdApartment) => {
+    fetch('http://localhost:3000/apartments', {
+      body: JSON.stringify(createdApartment),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(() => readApartment())
+    .catch(error => console.log("Create apartment errors: ", error))
   }
 
 
