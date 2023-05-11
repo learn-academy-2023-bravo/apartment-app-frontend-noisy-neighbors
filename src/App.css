@@ -23,6 +23,10 @@ header {
   font-family: "Bebas";
   position: absolute;
 }
+.app-name {
+  color:rgb(205, 10, 10);
+  text-shadow: 1px .5px 0 #f5dd05, .5px .5px .5px rgba(255,241,9,0) !important;
+}
 
 footer {
   color: #fff;
@@ -42,10 +46,21 @@ footer {
   font-family: "Bebas";
 }
 .page_heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
   padding-top: 60px;
-  color: black;
+  color: white;
   bottom: 50%;
   z-index: 999;
+}
+.sign-in {
+  display: flex;
+  justify-content: center;
+}
+.sign-up {
+  display: flex;
+  justify-content: center;
 }
 
 .new-apartment-form {
@@ -58,6 +73,7 @@ footer {
 }
 
 .carousel-image {
+  margin-top: 10px;
   width: 1000px;
   height: 500px;
 }
@@ -70,15 +86,26 @@ footer {
   left: 10px; 
 }
 
-.card {
-  width: 300px;
-  height: 300px;
-  margin: 20px;
-  display: inline-block;
-  position: relative;
+.form {
+  color: white;
+}
+
+.flex-apartments {
+  margin: 30px;
+  padding-top: 10px;
   perspective: 800px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 20px;
 }
+
+
+
+
+

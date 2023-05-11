@@ -10,14 +10,16 @@ import { NavLink } from "react-router-dom"
 const ApartmentIndex = ({ apartments }) => {
   return (
     <>
+    <main>
       <div className="apartments-body">
-        <h1 className="index-title">Recent Listings</h1>
+        <h1 className="index-title"></h1>
         <div className="flex-apartments">
           {apartments.map((apartment, index) => {
             return (
+              <div className="card-container">
               <Card
                 style={{
-                  width: "14rem",
+                  width: "14rem"
                 }}
                 key={index}
               >
@@ -31,14 +33,20 @@ const ApartmentIndex = ({ apartments }) => {
                     to={`/apartmentshow/${apartment.id}`}
                     className="nav-link"
                   >
-                    <Button className="apartment-button">More Details</Button>
+                    <Button style={{
+                      backgroundColor: "black",
+                      fontFamily: "Bebas Neue",
+
+                    }}>More Details</Button>
                   </NavLink>
                 </CardBody>
               </Card>
+              </div>
             )
           })}
         </div>
       </div>
+      </main>
     </>
   )
 }
