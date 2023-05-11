@@ -18,10 +18,21 @@ import MyApartments from './pages/MyApartments';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(mockUsers[null]) //Simulated Login
-  const [apartments, setApartments] = useState(mockApartments)
+  const [apartments, setApartments] = useState([])
+    useEffect(() => {
+      readApartment()
+    }, [])
 
   const createApartment = (createApartment) => {
+  }
 
+  const readApartment = () => {
+    fetch('http://localhost:3000/apartments')
+    .then(response => response.json())
+    .then(payload => {
+      setApartments(payload)
+    })
+    .catch(error => console.log("Apartment read errors ", error))
   }
 
 
