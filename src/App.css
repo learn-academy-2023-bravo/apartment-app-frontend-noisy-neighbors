@@ -102,6 +102,7 @@ header {
   animation: glowing 1.5s infinite;
 }
 
+
 @keyframes glowing {
   0% {
     box-shadow: 0 0 5px #00ffff, 0 0 20px #00ffff;
@@ -119,6 +120,38 @@ header {
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
+}
+
+.new-apartment-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.3rem;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.new-apartment-form > * {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.apartmentnew {
+  text-align: center;
+  color: white;
+  font-family: "Bebas";
+}
+
+.addlisting {
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  position: absolute;
+  z-index: 999;
+  right: 600px;
+  top: 50px;
+  align-items: center;
 }
 
 .sign-in-heading, .sign-up-heading {
