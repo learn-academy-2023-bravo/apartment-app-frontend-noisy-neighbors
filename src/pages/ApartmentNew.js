@@ -3,13 +3,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import add from '../assets/add.png'
 
-const ApartmentNew = ({createApartment}) => {
+const ApartmentNew = ({createApartment, currentUser}) => {
   
   const navigate = useNavigate()
 
   const [newApartment, setNewApartment] = useState({
-    user_id: '',
-    id: '',
+    user_id: currentUser.id,
+    // id: '',
     street: "",
     unit: "",
     city: "",
@@ -32,7 +32,7 @@ const ApartmentNew = ({createApartment}) => {
 
   const handleClick = () => {
     createApartment(newApartment)
-    navigate ("/apartmentindex")
+    navigate ("/myapartments")
   }
     
   return(
@@ -195,8 +195,9 @@ const ApartmentNew = ({createApartment}) => {
           value={newApartment.hoa}
           />
         </FormGroup>
-        <Button className="submit" onClick={handleClick}>Submit</Button>
+        
       </Form>
+      <Button className="submit" onClick={handleClick}>Submit</Button>
     </>
   )
 }

@@ -1,9 +1,26 @@
 import signUp from '../assets/signUp.png'
+import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const SignUp = () => {
+const SignUp = ({ signup }) => {
 
-  const handleSubmit = () => {
-    console.log('something')
+  const formRef = useRef()
+
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(formRef.current)
+
+    const data = Object.fromEntries(formData)
+
+    const userInfo = {
+      "user":{ email: data.email, password: data.password }
+    }
+    signup(userInfo)
+    navigate("/")
+    e.target.reset()
   }
 
 
@@ -11,7 +28,7 @@ const SignUp = () => {
     <>
       <img className='signupwords'src={signUp} />
       <div className="sign-up">
-        <form onSubmit={handleSubmit} className="form">
+        <form ref={formRef} onSubmit={handleSubmit} className="form">
           <div className="form-row">
           <label>Email:</label> <input type="email" name='email' placeholder="email" />
           </div>

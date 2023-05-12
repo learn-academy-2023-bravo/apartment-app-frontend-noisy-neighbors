@@ -8,6 +8,9 @@ import {
 import { NavLink } from "react-router-dom"
 
 const ApartmentIndex = ({ apartments }) => {
+
+  console.log(apartments);
+
   return (
     <> 
     <main>

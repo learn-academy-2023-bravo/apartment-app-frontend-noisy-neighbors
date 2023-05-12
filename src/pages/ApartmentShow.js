@@ -5,9 +5,10 @@ import { Card, CardImg, CardBody,
 
 const ApartmentShow = ({apartments}) => {
     const { id } = useParams()
-  
+    console.log(apartments);
   const currentApartment = apartments?.find((apartment) => apartment.id === +id)
   console.log("current apartment: ", currentApartment)
+
   return (
     <><h3>Show Apartment</h3>
     <div className="apartments-body">

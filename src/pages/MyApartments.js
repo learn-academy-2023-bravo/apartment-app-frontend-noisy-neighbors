@@ -2,9 +2,9 @@ import { Card, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
 
-const MyApartments = ({ apartments, current_user }) => {
+const MyApartments = ({ apartments, currentUser }) => {
 
-  const myApartments = apartments?.filter(apartment => current_user?.id === apartment.user_id)
+  const myApartments = apartments?.filter(apartment => currentUser?.id === apartment.user_id)
 
   return (
     <>
@@ -32,7 +32,12 @@ const MyApartments = ({ apartments, current_user }) => {
                   >
                     <Button className="apartment-button">More Details</Button>
                   </NavLink>
-                  <Button className="apartment-button">Update</Button>
+                  <NavLink
+                    to={`/apartmentedit/${apartment.id}`}
+                  >
+                  <Button className="apartment-button" >Update</Button>
+                  </NavLink>
+                  
                   <Button className="apartment-button">Delete</Button>
                 </CardBody>
               </Card>
