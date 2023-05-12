@@ -21,6 +21,7 @@ header {
   padding: 10px;
   font-family: "Bebas";
   color: white;
+  word-spacing: 5px;
 }
 
 .nav {
@@ -30,6 +31,8 @@ header {
   margin: 0;
   text-align: center !important;
   font-family: "Bebas";
+  word-spacing: 5px;
+
 }
 
 .nav-link {
@@ -163,6 +166,7 @@ header {
 
 .sign-up-words, .sign-in-words {
   font-size: 1.3rem;
+  word-spacing: 5px;
 }
 
 .centered-container {
