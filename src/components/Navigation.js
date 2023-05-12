@@ -1,11 +1,12 @@
 import React from "react"
 import { Nav, NavItem } from "reactstrap"
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
+import world from "../assets/world.png"
 
 const Navigation = ({ current_user }) => {
     return (
         <>
-            <Nav className="nav">
+            <Nav className="nav justify-content-left">
                 {current_user &&
                     <>
                         <NavItem>
@@ -36,6 +37,9 @@ const Navigation = ({ current_user }) => {
                             <NavLink to="/signup" className="nav-link">
                                 Sign Up
                             </NavLink>
+                            <Link to="/">
+        <img src={world} alt="Clickable Image" className="centered-image" />
+      </Link>
                         </NavItem>
 
                     </>

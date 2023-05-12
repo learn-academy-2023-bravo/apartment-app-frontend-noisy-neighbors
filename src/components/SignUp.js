@@ -1,30 +1,33 @@
-
-
+import signUp from '../assets/signUp.png'
 
 const SignUp = () => {
 
   const handleSubmit = () => {
-    console.log('sign up')
-
+    console.log('something')
   }
+
+
   return (
     <>
-      <h3 className="page_heading"></h3>
+      <img className='signupwords'src={signUp} />
       <div className="sign-up">
-        <form onSubmit={handleSubmit}>
-          Email: <input type="email" name='email' placeholder="email" />
+        <form onSubmit={handleSubmit} className="form">
+          <div className="form-row">
+          <label>Email:</label> <input type="email" name='email' placeholder="email" />
+          </div>
           <br />
-          Password: <input type="password" name='password' placeholder="password" />
+          <div className="form-row">
+          <label>Password:</label> <input type="password" name='password' placeholder="password" />
+          </div>
           <br />
-          <input type='submit' value="Submit" />
+          <input className="submit-button" type='submit' value="Login" />
         </form>
         <br />
-        <div>Already registered, <a href="/signin" >Login</a> here.</div>
+        <div className="sign-up-words">Already registered? <a href="/signup">Login Now!</a> </div>
       </div>
     </>
   )
 }
-
 
 
 
