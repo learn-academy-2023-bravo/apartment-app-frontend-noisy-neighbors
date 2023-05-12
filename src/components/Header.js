@@ -3,11 +3,11 @@ import '../App.css'
 import Navigation from "./Navigation"
 
 
-const Header = ({ current_user }) => {
+const Header = ({ currentUser, logout }) => {
     return (
       <>
       <header className="header">
-      <Navigation current_user={current_user}/>
+      <Navigation currentUser={currentUser} logout={logout}/>
       </header>
       </>
     )

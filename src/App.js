@@ -11,17 +11,73 @@ import Footer from "./components/Footer"
 import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
 import "./App.css"
-import mockApartments from "./mockApartments"
-import mockUsers from "./mockUsers"
 import MyApartments from "./pages/MyApartments"
 
 const App = () => {
-	const [currentUser, setCurrentUser] = useState(mockUsers[null]) 
-  
+	const [currentUser, setCurrentUser] = useState(null)
+
 	const [apartments, setApartments] = useState([])
+
 	useEffect(() => {
 		readApartment()
 	}, [])
+
+	const url = 'http://localhost:3000'
+
+	const login = (userInfo) => {
+		fetch(`${url}/login`, {
+			body: JSON.stringify(userInfo),
+			headers: {
+				"Content-Type": 'application/json',
+				"Accept": 'application/json'
+			},
+			method: 'POST'
+		})
+			.then(response => {
+				localStorage.setItem("token", response.headers.get("Authorization"))
+				return response.json()
+			})
+			.then(payload => {
+				setCurrentUser(payload)
+			})
+			.catch(error => console.log("login errors: ", error))
+	}
+
+	const signup = (userInfo) => {
+		fetch(`${url}/signup`, {
+			body: JSON.stringify(userInfo),
+			headers: {
+				"Content-Type": 'application/json',
+				"Accept": 'application/json'
+			},
+			method: 'POST'
+		})
+			.then(response => {
+				// store the token
+				localStorage.setItem("token", response.headers.get("Authorization"))
+				return response.json()
+			})
+			.then(payload => {
+				setCurrentUser(payload)
+			})
+			.catch(error => console.log("login errors: ", error))
+	}
+
+
+	const logout = () => {
+		fetch(`${url}/logout`, {
+			headers: {
+				"Content-Type": 'application/json',
+				"Authorization": localStorage.getItem("token") //retrieve the token 
+			},
+			method: 'DELETE'
+		})
+			.then(payload => {
+				localStorage.removeItem("token")  // remove the token
+				setCurrentUser(null)
+			})
+			.catch(error => console.log("log out errors: ", error))
+	}
 
 	const readApartment = () => {
 		fetch("http://localhost:3000/apartments")
@@ -73,20 +129,15 @@ const App = () => {
 
 	return (
 		<>
-			<Header current_user={currentUser} />
+			<Header currentUser={currentUser} logout={logout} />
 			<Routes>
 				<Route path="/" element={<Homepage />} />
 				<Route
 					path="/apartmentedit/:id"
-					element={
-						<ApartmentEdit
-							apartments={apartments}
-							updateApartment={updateApartment}
-						/>
-					}
+					element={<ApartmentEdit apartments={apartments} updateApartment={updateApartment} currentUser={currentUser}/>}
 				/>
-				<Route path="/signin" element={<SignIn />} />
-				<Route path="/signup" element={<SignUp />} />
+				<Route path="/signin" element={<SignIn login={login} />} />
+				<Route path="/signup" element={<SignUp signup={signup} />} />
 				<Route
 					path="/apartmentindex"
 					element={<ApartmentIndex apartments={apartments} />}
@@ -98,12 +149,12 @@ const App = () => {
 				<Route
 					path="/myapartments"
 					element={
-						<MyApartments apartments={apartments} current_user={currentUser} />
+						<MyApartments apartments={apartments} currentUser={currentUser} />
 					}
 				/>
 				<Route
 					path="/apartmentnew"
-					element={<ApartmentNew createApartment={createApartment} />}
+					element={<ApartmentNew createApartment={createApartment} currentUser={currentUser} />}
 				/>
 				<Route path="*" element={<NotFound />} />
 			</Routes>

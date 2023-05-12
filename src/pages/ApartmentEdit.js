@@ -2,12 +2,16 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 
-const ApartmentEdit = ({ apartments, updateApartment }) => {
+const ApartmentEdit = ({ apartments, updateApartment, currentUser }) => {
   const { id } = useParams()
   const navigate = useNavigate()
+  console.log(currentUser);
+  // console.log(apartments)
   let currentApartment = apartments?.find((apartment) => apartment.id === +id)
+  // console.log(currentApartment)
 
   const [editApartment, setEditApartment] = useState({
+    user_id: currentUser.id,
     street: currentApartment.street,
     unit: currentApartment.unit,
     city: currentApartment.city,
@@ -191,7 +195,9 @@ const ApartmentEdit = ({ apartments, updateApartment }) => {
         </FormGroup>
         <Button className="submit-button" onClick={handleSubmit}>Submit Updated Apartment</Button>
       </Form>
+      <br/>
     </div>
+
   )
 }
 

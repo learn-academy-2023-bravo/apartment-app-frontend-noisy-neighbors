@@ -1,9 +1,17 @@
 import React from "react"
 import { Nav, NavItem } from "reactstrap"
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, Link, useNavigate } from "react-router-dom"
 import world from "../assets/world.png"
 
-const Navigation = ({ current_user }) => {
+const Navigation = ({ current_user, logout }) => {
+
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        logout()
+        navigate("/")
+      }
+
     return (
         <>
             <Nav className="nav justify-content-left">
@@ -18,6 +26,14 @@ const Navigation = ({ current_user }) => {
                             <NavLink to="/apartmentnew" className="nav-link">
                                 Create Listings
                             </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink onClick={handleClick}>
+                                Logout
+                            </NavLink>
+                            <Link to="/">
+        <img src={world} alt="Clickable Image" className="centered-image" />
+      </Link>
                         </NavItem>
                     </>
                 }
