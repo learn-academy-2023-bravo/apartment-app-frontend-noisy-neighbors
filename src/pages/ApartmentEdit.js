@@ -189,7 +189,7 @@ const ApartmentEdit = ({ apartments, updateApartment }) => {
           value={editApartment.hoa}
           />
         </FormGroup>
-        <Button className="submit" onClick={handleSubmit}>Submit Updated Apartment</Button>
+        <Button className="submit-button" onClick={handleSubmit}>Submit Updated Apartment</Button>
       </Form>
     </div>
   )

@@ -1,6 +1,7 @@
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import add from '../assets/add.png'
 
 const ApartmentNew = ({createApartment}) => {
   
@@ -35,12 +36,13 @@ const ApartmentNew = ({createApartment}) => {
   }
     
   return(
-    <><h3 className="page_heading">Add A Listing</h3>
+    <>
+    <img className='addlisting'src={add} />
         
       <Form 
       className="new-apartment-form">
         <FormGroup>
-          <Label for="apartment-street">Street</Label>
+          <Label for="apartment-street" className='apartmentnew'>Street</Label>
           <Input
           id="apartment-street"
           name="street"
@@ -51,7 +53,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-price">Price</Label>
+          <Label for="apartment-price" className='apartmentnew'>Price</Label>
           <Input
           id="apartment-price"
           name="price"
@@ -62,7 +64,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-unit">Unit</Label>
+          <Label for="apartment-unit" className='apartmentnew'>Unit</Label>
           <Input
           id="apartment-unit"
           name="unit"
@@ -73,7 +75,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-city">City</Label>
+          <Label for="apartment-city" className='apartmentnew'>City</Label>
           <Input
           id="apartment-city"
           name="city"
@@ -84,7 +86,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-state">State</Label>
+          <Label for="apartment-state" className='apartmentnew'>State</Label>
           <Input
           id="apartment-state"
           name="state"
@@ -95,7 +97,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-square-footage">Square Footage</Label>
+          <Label for="apartment-square-footage" className='apartmentnew'>Square Footage</Label>
           <Input
           id="apartment-square-footage"
           name="square_footage"
@@ -106,7 +108,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-bedrooms">Bedrooms</Label>
+          <Label for="apartment-bedrooms" className='apartmentnew'>Bedrooms</Label>
           <Input
           id="apartment-bedrooms"
           name="bedrooms"
@@ -117,7 +119,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-bathrooms">Bathrooms</Label>
+          <Label for="apartment-bathrooms" className='apartmentnew'>Bathrooms</Label>
           <Input
           id="apartment-bathrooms"
           name="bathrooms"
@@ -128,7 +130,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-pet">Pet</Label>
+          <Label for="apartment-pet" className='apartmentnew'>Pet</Label>
           <Input
           id="apartment-pet"
           name="pet"
@@ -139,7 +141,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-image">Image</Label>
+          <Label for="apartment-image" className='apartmentnew'>Image</Label>
           <Input
           id="apartment-image"
           name="image"
@@ -150,7 +152,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-ac-unit">A/C Unit</Label>
+          <Label for="apartment-ac-unit" className='apartmentnew'>A/C Unit</Label>
           <Input
           id="apartment-ac-unit"
           name="ac_unit"
@@ -161,7 +163,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-major-appliances">Major Appliances</Label>
+          <Label for="apartment-major-appliances" className='apartmentnew'>Major Appliances</Label>
           <Input
           id="apartment-major-appliances"
           name="major_appliances"
@@ -172,7 +174,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-parking">Parking</Label>
+          <Label for="apartment-parking" className='apartmentnew'>Parking</Label>
           <Input
           id="apartment-parking"
           name="parking"
@@ -183,7 +185,7 @@ const ApartmentNew = ({createApartment}) => {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="apartment-hoa">HOA</Label>
+          <Label for="apartment-hoa" className='apartmentnew'>HOA</Label>
           <Input
           id="apartment-hoa"
           name="hoa"
