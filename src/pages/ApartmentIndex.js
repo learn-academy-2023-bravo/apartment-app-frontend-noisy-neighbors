@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom"
 
 const ApartmentIndex = ({ apartments }) => {
   return (
-    <>
+    <> 
     <main>
       <div className="apartments-body">
         <h1 className="index-title"></h1>

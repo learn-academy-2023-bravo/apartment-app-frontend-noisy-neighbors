@@ -4,7 +4,6 @@ import construction from "../assets/construction.png"
 const NotFound = () => {
 
     return(
-
         <>
         <div className="centered-container">
             <img className="error-image" src={construction} alt="Not Found Page 

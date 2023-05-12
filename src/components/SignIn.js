@@ -6,7 +6,6 @@ const SignIn = () => {
     console.log('something')
   }
 
-
   return (
     <>
       <img className='signinwords'src={signIn} />

@@ -49,8 +49,4 @@ const MyApartments = ({ apartments, current_user }) => {
 
 
 
-
-
-
-
 export default MyApartments
