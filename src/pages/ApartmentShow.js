@@ -38,4 +38,5 @@ const ApartmentShow = ({apartments}) => {
   )
 }
 
+
 export default ApartmentShow

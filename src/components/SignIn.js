@@ -1,4 +1,4 @@
-
+import signIn from '../assets/signIn.png'
 
 const SignIn = () => {
 
@@ -6,20 +6,23 @@ const SignIn = () => {
     console.log('something')
   }
 
-
   return (
     <>
-      <h3 className="page_heading"></h3>
+      <img className='signinwords'src={signIn} />
       <div className="sign-in">
         <form onSubmit={handleSubmit} className="form">
-          Email: <input type="email" name='email' placeholder="email" />
+          <div className="form-row">
+          <label>Email:</label> <input type="email" name='email' placeholder="email" />
+          </div>
           <br />
-          Password: <input type="password" name='password' placeholder="password" />
+          <div className="form-row">
+          <label>Password:</label> <input type="password" name='password' placeholder="password" />
+          </div>
           <br />
-          <input type='submit' value="Login" />
+          <input className="submit-button" type='submit' value="Login" />
         </form>
         <br />
-        <div>Not registered yet, <a href="/signup">Signup</a> </div>
+        <div className="sign-in-words">Not registered yet? <a href="/signup">Signup Now!</a> </div>
       </div>
     </>
   )

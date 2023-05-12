@@ -8,29 +8,28 @@ import {
   CarouselCaption,
 } from 'reactstrap';
 
+import home from '../assets/home.png'
+
 const items = [
   {
-    src: 'https://images1.apartments.com/i2/oSPNN2DcFDJ8M9LQG9MtoXM5SxP3LVm6mqnwxYCtU6c/117/888-at-grand-hope-park-los-angeles-ca-building-photo.jpg',
+    src: 'https://hunterkerhart.com/wp-content/uploads/2019/01/VisionOnWilshire-03-1.jpg',
     altText: 'Slide 1',
-    caption: 'Slide 1',
+
     key: 1,
   },
   {
-    src: 'https://www.losangeleshomes.eu/wp-content/uploads/2014/04/related_marmol_radziner_a_l.jpg',
+    src: 'https://hunterkerhart.com/wp-content/uploads/2019/01/VisionOnWilshire-73.jpg',
     altText: 'Slide 2',
-    caption: 'Slide 2',
     key: 2,
   },
   {
-    src: 'https://static2.mansionglobal.com/production/media/article-images/271951bdf0aee63c391512807a911933/large_TEN50_Penthouse-1.jpg',
+    src: 'https://hunterkerhart.com/wp-content/uploads/2018/08/Amenity-Room-by-Hunter-Kerhart.jpg',
     altText: 'Slide 3',
-    caption: 'Slide 3',
     key: 3,
   },
   {
-    src: 'https://i.pinimg.com/736x/dc/2e/cb/dc2ecb5c9349cc59c42a4fedd33895f1.jpg',
+    src: 'https://hunterkerhart.com/wp-content/uploads/2019/01/VisionOnWilshire-66.jpg',
     altText: 'Slide 3',
-    caption: 'Slide 3',
     key: 4,
   }
 ];
@@ -63,7 +62,9 @@ const Homepage = (args) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} className='carousel-image' />
+        <img src={home} alt="Another Image" style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1, maxHeight: '40vh' }} />
+        <img src={item.src} alt={item.altText} style={{ maxHeight: '60vh', width: '100%', objectFit: 'cover'}} />
+  
         <CarouselCaption
           captionText={item.caption}
           captionHeader={item.caption}
@@ -74,10 +75,7 @@ const Homepage = (args) => {
 
   return (
     <>
-
-        
-      <h3 className="page_heading"></h3>
-    
+    <div className="carousel-container"></div>
 
 
     <Carousel
@@ -92,29 +90,19 @@ const Homepage = (args) => {
         onClickHandler={goToIndex}
       />
       {slides}
-      <CarouselControl
+      <CarouselControl className="carousel-arrow carousel-arrow-left"
         direction="prev"
         directionText="Previous"
         onClickHandler={previous}
       />
-      <CarouselControl
+      <CarouselControl className="carousel-arrow carousel-arrow-right"
         direction="next"
         directionText="Next"
         onClickHandler={next}
       />
     </Carousel>
     </>
-  );
-
-
-
+  )
   }
   
-
-
-
-
-
-
-
 export default Homepage
